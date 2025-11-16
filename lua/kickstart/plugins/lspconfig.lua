@@ -219,7 +219,30 @@ return {
         --
         -- But for many setups, the LSP (`ts_ls`) will work just fine
         -- ts_ls = {},
-        --
+        -- pyrefly = {
+        --   settings = {
+        --     python = {
+        --       pyrefly = {
+        --         displayTypeErrors = 'force-on',
+        --       },
+        --     },
+        --   },
+        -- },
+        -- basedpyright = {},
+        pylsp = {
+          settings = {
+            pylsp = {
+              plugins = {
+                jedi = { auto_import_modules = {} },
+                autopep8 = { enabled = false },
+                mccabe = { enabled = false },
+                pycodestyle = { enabled = false },
+                pyflakes = { enabled = false },
+                yapf = { enabled = false },
+              },
+            },
+          },
+        },
 
         lua_ls = {
           -- cmd = { ... },

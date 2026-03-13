@@ -24,7 +24,7 @@ return {
       'WhoIsSethDaniel/mason-tool-installer.nvim',
 
       -- Useful status updates for LSP.
-      { 'j-hui/fidget.nvim',    opts = {} },
+      { 'j-hui/fidget.nvim', opts = {} },
 
       -- Allows extra capabilities provided by blink.cmp
       'saghen/blink.cmp',
@@ -167,7 +167,7 @@ return {
       -- See :help vim.diagnostic.Opts
       vim.diagnostic.config {
         severity_sort = true,
-        float = { border = 'rounded', source = 'if_many' },
+        float = { border = 'rounded', source = true },
         underline = { severity = vim.diagnostic.severity.ERROR },
         signs = vim.g.have_nerd_font and {
           text = {
@@ -178,7 +178,7 @@ return {
           },
         } or {},
         virtual_text = {
-          source = 'if_many',
+          source = true,
           spacing = 2,
           format = function(diagnostic)
             local diagnostic_message = {
@@ -258,6 +258,8 @@ return {
             },
           },
         },
+
+        copilot = {},
       }
 
       -- The following loop will configure each server with the capabilities we defined above.
